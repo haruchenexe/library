@@ -89,13 +89,41 @@ function deleteRow() {
 }
 
 
+function authorInput() {
+    const authorinputReq = document.getElementById('author');
+
+    authorinputReq.addEventListener('input', () => {
+        authorinputReq.setCustomValidity('');
+        authorinputReq.checkValidity();
+    });
+
+    authorinputReq.addEventListener('invalid', () => {
+        if(authorinputReq.value === '') {
+            authorinputReq.setCustomValidity('Enter Author Name!');
+        }
+    })
+}
+
+authorInput();
 
 
+function titleInput() {
+    const titleinputReq = document.getElementById('title');
+
+    titleinputReq.addEventListener('input', () => {
+        titleinputReq.setCustomValidity('');
+        titleinputReq.checkValidity();
+    });
+
+    titleinputReq.addEventListener('invalid', () => {
+        if(titleinputReq.value === '') {
+            titleinputReq.setCustomValidity('Enter Title Name!');
+        }
+    })
+}
 
 
-
-
-
+titleInput();
 
 
 
